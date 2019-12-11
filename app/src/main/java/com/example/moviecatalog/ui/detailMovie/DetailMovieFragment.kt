@@ -6,12 +6,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.example.moviecatalog.R
 import com.example.moviecatalog.di.component.DaggerFragmentComponent
 import com.example.moviecatalog.di.module.FragmentModule
-import com.example.moviecatalog.ui.dashboard.DashboardFragment
+import com.example.moviecatalog.model.MovieCatalog
 import javax.inject.Inject
 
 class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickListener {
@@ -20,10 +22,14 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
 
     private lateinit var rootView: View
     private lateinit var myContext: FragmentActivity
+    private lateinit var ivMovie: ImageView
+    private lateinit var tvMTitle: TextView
+    private lateinit var tvMDesc: TextView
+    private lateinit var movieCatalog: MovieCatalog
 
-    fun newInstance(): DashboardFragment {
-        Log.e("error", "Dashboard Fragment Instance")
-        return DashboardFragment()
+    fun newInstance(): DetailMovieFragment {
+        Log.e("newInstance", "Detail Movie Fragment Instance")
+        return DetailMovieFragment()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +38,7 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        rootView = inflater.inflate(R.layout.fm_dashboard, container, false)
+        rootView = inflater.inflate(R.layout.fm_detail_movie, container, false)
 
         return rootView
     }
@@ -40,10 +46,19 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val bundle = this.arguments
+
+        ivMovie = view.findViewById(R.id.iv_movie)
+        tvMTitle = view.findViewById(R.id.tv_m_title)
+        tvMDesc = view.findViewById(R.id.tv_m_desc)
+
+        if (bundle != null) Log.e("Bundle", "Bundle is not null")
+
+        movieCatalog = bundle!!.getParcelable("DetailMovie")!!
     }
 
     override fun onClick(v: View?) {
-        Log.e("error", "Click")
+        Log.e("click", "Click")
 
         when(v?.id) {
 
@@ -64,6 +79,6 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
     }
 
     companion object{
-        val TAG: String = "Dashboard Fragment"
+        val TAG: String = "Detail Movie Fragment"
     }
 }

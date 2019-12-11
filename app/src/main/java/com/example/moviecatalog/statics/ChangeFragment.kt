@@ -16,18 +16,13 @@ object ChangeFragment {
             .commit()
     }
 
-    fun showDetailMovieFragment(context: MainActivity) {
-        context.supportFragmentManager.beginTransaction()
-            .disallowAddToBackStack()
-//                .setCustomAnimations(AnimType.SLIDE.getAnimPair().first, AnimType.SLIDE.getAnimPair().second)
-            .replace(R.id.fl_main, DetailMovieFragment().newInstance(), DetailMovieFragment.TAG)
-            .commit()
+    fun showDetailMovieFragment(myContext: FragmentActivity) {
+        this.start(myContext.supportFragmentManager, R.id.fl_main, DetailMovieFragment().newInstance(),
+            DetailMovieFragment.TAG)
     }
 
     fun showDashboardFragment(myContext: FragmentActivity) {
-        myContext.supportFragmentManager.beginTransaction()
-            .disallowAddToBackStack()
-            .replace(R.id.fl_main, DashboardFragment().newInstance(), DashboardFragment.TAG)
-            .commit()
+        this.start(myContext.supportFragmentManager, R.id.fl_main, DashboardFragment().newInstance(),
+            DashboardFragment.TAG)
     }
 }

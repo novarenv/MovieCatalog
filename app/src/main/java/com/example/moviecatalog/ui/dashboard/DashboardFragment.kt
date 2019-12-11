@@ -16,6 +16,8 @@ import com.example.moviecatalog.R
 import com.example.moviecatalog.di.component.DaggerFragmentComponent
 import com.example.moviecatalog.di.module.FragmentModule
 import com.example.moviecatalog.model.MovieCatalog
+import com.example.moviecatalog.statics.ChangeFragment
+import com.example.moviecatalog.ui.detailMovie.DetailMovieFragment
 import javax.inject.Inject
 
 class DashboardFragment : Fragment(), DashboardContract.View, View.OnClickListener {
@@ -29,6 +31,9 @@ class DashboardFragment : Fragment(), DashboardContract.View, View.OnClickListen
     private lateinit var dataTitle: Array<String>
     private lateinit var dataDesc: Array<String>
     private var movieCatalogs = ArrayList<MovieCatalog>()
+    private var changeFragment: ChangeFragment = ChangeFragment
+    private val detailMovieFragment: Fragment = DetailMovieFragment().newInstance()
+    private val bundle = Bundle()
 
     fun newInstance(): DashboardFragment {
         Log.e("error", "Dashboard Fragment Instance")
@@ -54,11 +59,17 @@ class DashboardFragment : Fragment(), DashboardContract.View, View.OnClickListen
         adapter = DashboardAdapter(myContext)
         listView.adapter = adapter
 
+        presenter.attach(this)
         prepare()
         addItem()
 
         listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+
+            bundle.putParcelable("DetailMovie", adapter.movieCatalogs.get(position))
+            detailMovieFragment.arguments = bundle
+
             Toast.makeText(myContext, movieCatalogs[position].title, Toast.LENGTH_SHORT).show()
+            presenter.onDetailMovieClick()
         }
     }
 
@@ -88,9 +99,18 @@ class DashboardFragment : Fragment(), DashboardContract.View, View.OnClickListen
                 dataTitle[position],
                 dataDesc[position]
             )
-            movieCatalogs.add(movieCatalog)
+            if (!movieCatalogs.contains(movieCatalog))
+                movieCatalogs.add(movieCatalog)
         }
         adapter.movieCatalogs = movieCatalogs
+    }
+
+    override fun showDetailMovieFragment() {
+        fragmentManager!!.beginTransaction()
+            .addToBackStack(DetailMovieFragment.TAG)
+            .replace(R.id.fl_main, detailMovieFragment, DetailMovieFragment.TAG)
+            .commit()
+//        changeFragment.showDetailMovieFragment(myContext)
     }
 
     fun injectDashboard() {
