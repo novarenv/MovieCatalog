@@ -55,6 +55,10 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
         if (bundle != null) Log.e("Bundle", "Bundle is not null")
 
         movieCatalog = bundle!!.getParcelable("DetailMovie")!!
+
+        ivMovie.setImageResource(movieCatalog.photo)
+        tvMTitle.text = movieCatalog.title
+        tvMDesc.text = movieCatalog.desc
     }
 
     override fun onClick(v: View?) {
