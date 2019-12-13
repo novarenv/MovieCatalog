@@ -24,7 +24,7 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
     private lateinit var myContext: FragmentActivity
     private lateinit var ivMovie: ImageView
     private lateinit var tvMTitle: TextView
-    private lateinit var tvMDesc: TextView
+//    private lateinit var tvMDesc: TextView
     private lateinit var movieCatalog: MovieCatalog
 
     fun newInstance(): DetailMovieFragment {
@@ -50,7 +50,7 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
 
         ivMovie = view.findViewById(R.id.iv_movie)
         tvMTitle = view.findViewById(R.id.tv_m_title)
-        tvMDesc = view.findViewById(R.id.tv_m_desc)
+//        tvMDesc = view.findViewById(R.id.tv_m_desc)
 
         if (bundle != null) Log.e("Bundle", "Bundle is not null")
 
@@ -58,7 +58,7 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
 
         ivMovie.setImageResource(movieCatalog.photo)
         tvMTitle.text = movieCatalog.title
-        tvMDesc.text = movieCatalog.desc
+//        tvMDesc.text = movieCatalog.desc
     }
 
     override fun onClick(v: View?) {

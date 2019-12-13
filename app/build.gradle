@@ -47,7 +47,13 @@ dependencies {
     compileOnly 'javax.annotation:jsr250-api:1.0'
     implementation 'javax.inject:javax.inject:1'
 
-    // kapt
+    // Kapt
     implementation "androidx.room:room-runtime:2.2.2"
     kapt "androidx.room:room-compiler:2.2.2"
+
+    // Ticket View
+    implementation 'com.vipulasri:ticketview:1.0.7'
+
+    // Coordinator Layout
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
 }

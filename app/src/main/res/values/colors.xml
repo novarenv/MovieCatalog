@@ -3,4 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="whiteApp">#F4F4F4</color>
+    <color name="orangeApp">#FF7315</color>
+    <color name="greyApp">#3A3535</color>
+    <color name="blackApp">#232020</color>
 </resources>
