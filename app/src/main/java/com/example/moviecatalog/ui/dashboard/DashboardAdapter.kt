@@ -33,9 +33,9 @@ class DashboardAdapter internal constructor(private val context: Context) : Base
     }
 
     private inner class ViewHolder internal constructor(view: View) {
+        private val imgPhoto: ImageView = view.findViewById(R.id.iv_movie)
         private val tvMTitle: TextView = view.findViewById(R.id.tv_m_title)
         private val tvMDesc: TextView = view.findViewById(R.id.tv_m_desc)
-        private val imgPhoto: ImageView = view.findViewById(R.id.iv_movie)
 
         internal fun bind(movieCatalog: MovieCatalog) {
             imgPhoto.setImageResource(movieCatalog.photo)

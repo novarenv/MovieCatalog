@@ -26,16 +26,16 @@
             android:id="@+id/tv_m_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Movie Title"
-            android:textSize="20dp"
+            android:text="@string/movie_title"
+            android:textSize="20sp"
             />
 
         <TextView
             android:id="@+id/tv_m_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Movie Description"
-            android:textSize="16dp"
+            android:text="@string/movie_description"
+            android:textSize="16sp"
             android:maxLines="2"
             android:layout_marginTop="4dp"
             />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="data_photo">
+    <array name="movie_photo">
         <item>@drawable/poster_a_star</item>
         <item>@drawable/poster_aquaman</item>
         <item>@drawable/poster_avengerinfinity</item>
@@ -13,20 +13,20 @@
         <item>@drawable/poster_dragonball</item>
     </array>
 
-    <array name="data_title">
+    <array name="movie_title">
         <item>A Star Is Born</item>
         <item>Aquaman</item>
         <item>Avengers: Infinity War</item>
-        <item>title4</item>
-        <item>title5</item>
-        <item>title5</item>
-        <item>title5</item>
-        <item>title5</item>
-        <item>title5</item>
-        <item>title5</item>
+        <item>Bird Box</item>
+        <item>Bohemian Rhapsody</item>
+        <item>Bumblebee</item>
+        <item>Creed II</item>
+        <item>Once Upon a Deadpool</item>
+        <item>How to Train Your Dragon: The Hidden World</item>
+        <item>Dragon Ball Super: Broly</item>
     </array>
 
-    <array name="data_desc">
+    <array name="movie_desc">
 <!--        A Star Is Born-->
         <item>
             Seasoned musician Jackson Maine discovers — and falls in love with — struggling artist Ally.
@@ -50,12 +50,121 @@
             the Avengers have fought for has led up to this moment - the fate of Earth and existence
             itself has never been more uncertain.
         </item>
-        <item>desc4</item>
-        <item>desc5</item>
-        <item>desc5</item>
-        <item>desc5</item>
-        <item>desc5</item>
-        <item>desc5</item>
-        <item>desc5</item>
+<!--        Bird Box-->
+        <item>
+            Five years after an ominous unseen presence drives most of society to suicide,
+            a survivor and her two children make a desperate bid to reach safety.
+        </item>
+<!--        Bohemian Rhapsody-->
+        <item>
+            Singer Freddie Mercury, guitarist Brian May, drummer Roger Taylor and bass guitarist
+            John Deacon take the music world by storm when they form the rock \'n\' roll band Queen
+            in 1970. Hit songs become instant classics. When Mercury\'s increasingly wild lifestyle
+            starts to spiral out of control, Queen soon faces its greatest challenge yet – finding
+            a way to keep the band together amid the success and excess.
+        </item>
+<!--        Bumblebee-->
+        <item>
+            On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small Californian
+            beach town. Charlie, on the cusp of turning 18 and trying to find her place in the world,
+            discovers Bumblebee, battle-scarred and broken. When Charlie revives him, she quickly
+            learns this is no ordinary yellow VW bug.
+        </item>
+<!--        Creed II-->
+        <item>
+            Between personal obligations and training for his next big fight against an opponent
+            with ties to his family\'s past, Adonis Creed is up against the challenge of his life.
+        </item>
+<!--        Once Upon a Deadpool-->
+        <item>
+            A kidnapped Fred Savage is forced to endure Deadpool\'s PG-13 rendition of Deadpool 2 as
+            a Princess Bride-esque story that\'s full of magic, wonder &#38; zero F\'s.
+        </item>
+<!--        How to Train Your Dragon: The Hidden World-->
+        <item>
+            As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless\’ discovery
+            of an untamed, elusive mate draws the Night Fury away. When danger mounts at home and
+            Hiccup\’s reign as village chief is tested, both dragon and rider must make impossible
+            decisions to save their kind.
+        </item>
+<!--        Dragon Ball Super: Broly-->
+        <item>
+            Earth is peaceful following the Tournament of Power. Realizing that the universes still
+            hold many more strong people yet to see, Goku spends all his days training to reach even
+            greater heights. Then one day, Goku and Vegeta are faced by a Saiyan called \'Broly\' who
+            they\'ve never seen before. The Saiyans were supposed to have been almost completely wiped
+            out in the destruction of Planet Vegeta, so what\'s this one doing on Earth? This encounter
+            between the three Saiyans who have followed completely different destinies turns into a
+            stupendous battle, with even Frieza (back from Hell) getting caught up in the mix.
+        </item>
+    </array>
+
+    <array name="movie_date">
+<!--        A Star Is Born-->
+        <item>01-12-2019</item>
+<!--        Aquaman-->
+        <item>02-12-2019</item>
+<!--        Avengers: Infinity War-->
+        <item>03-12-2019</item>
+<!--        Bird Box-->
+        <item>04-12-2019</item>
+<!--        Bohemian Rhapsody-->
+        <item>05-12-2019</item>
+<!--        Bumblebee-->
+        <item>06-12-2019</item>
+<!--        Creed II-->
+        <item>07-12-2019</item>
+<!--        Once Upon a Deadpool-->
+        <item>08-12-2019</item>
+<!--        How to Train Your Dragon: The Hidden World-->
+        <item>09-12-2019</item>
+<!--        Dragon Ball Super: Broly-->
+        <item>10-12-2019</item>
+    </array>
+
+    <array name="movie_time">
+        <!--        A Star Is Born-->
+        <item>11.00 WIB</item>
+        <!--        Aquaman-->
+        <item>12.00 WIB</item>
+        <!--        Avengers: Infinity War-->
+        <item>13.00 WIB</item>
+        <!--        Bird Box-->
+        <item>14.00 WIB</item>
+        <!--        Bohemian Rhapsody-->
+        <item>15.00 WIB</item>
+        <!--        Bumblebee-->
+        <item>16.00 WIB</item>
+        <!--        Creed II-->
+        <item>17.00 WIB</item>
+        <!--        Once Upon a Deadpool-->
+        <item>18.00 WIB</item>
+        <!--        How to Train Your Dragon: The Hidden World-->
+        <item>19.00 WIB</item>
+        <!--        Dragon Ball Super: Broly-->
+        <item>20.00 WIB</item>
+    </array>
+
+    <array name="movie_seat">
+<!--        A Star Is Born-->
+        <item>A-1</item>
+<!--        Aquaman-->
+        <item>A-2</item>
+<!--        Avengers: Infinity War-->
+        <item>A-3</item>
+<!--        Bird Box-->
+        <item>A-4</item>
+<!--        Bohemian Rhapsody-->
+        <item>A-5</item>
+<!--        Bumblebee-->
+        <item>A-6</item>
+<!--        Creed II-->
+        <item>A-7</item>
+<!--        Once Upon a Deadpool-->
+        <item>A-8</item>
+<!--        How to Train Your Dragon: The Hidden World-->
+        <item>A-9</item>
+<!--        Dragon Ball Super: Broly-->
+        <item>A-10</item>
     </array>
 </resources>

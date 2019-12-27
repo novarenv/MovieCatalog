@@ -24,6 +24,9 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
     private lateinit var myContext: FragmentActivity
     private lateinit var ivMovie: ImageView
     private lateinit var tvMTitle: TextView
+    private lateinit var tvMDate: TextView
+    private lateinit var tvMTime: TextView
+    private lateinit var tvMSeat: TextView
 //    private lateinit var tvMDesc: TextView
     private lateinit var movieCatalog: MovieCatalog
 
@@ -50,6 +53,9 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
 
         ivMovie = view.findViewById(R.id.iv_movie)
         tvMTitle = view.findViewById(R.id.tv_m_title)
+        tvMDate = view.findViewById(R.id.tv_m_date)
+        tvMTime = view.findViewById(R.id.tv_m_time)
+        tvMSeat = view.findViewById(R.id.tv_m_seat)
 //        tvMDesc = view.findViewById(R.id.tv_m_desc)
 
         if (bundle != null) Log.e("Bundle", "Bundle is not null")
@@ -58,6 +64,9 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
 
         ivMovie.setImageResource(movieCatalog.photo)
         tvMTitle.text = movieCatalog.title
+        tvMDate.text = movieCatalog.date
+        tvMTime.text = movieCatalog.time
+        tvMSeat.text = movieCatalog.seat
 //        tvMDesc.text = movieCatalog.desc
     }
 

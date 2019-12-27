@@ -16,7 +16,6 @@ import com.example.moviecatalog.R
 import com.example.moviecatalog.di.component.DaggerFragmentComponent
 import com.example.moviecatalog.di.module.FragmentModule
 import com.example.moviecatalog.model.MovieCatalog
-import com.example.moviecatalog.statics.ChangeFragment
 import com.example.moviecatalog.ui.detailMovie.DetailMovieFragment
 import javax.inject.Inject
 
@@ -27,11 +26,13 @@ class DashboardFragment : Fragment(), DashboardContract.View, View.OnClickListen
     private lateinit var rootView: View
     private lateinit var myContext: FragmentActivity
     private lateinit var adapter: DashboardAdapter
-    private lateinit var dataPhoto: TypedArray
-    private lateinit var dataTitle: Array<String>
-    private lateinit var dataDesc: Array<String>
+    private lateinit var moviePhoto: TypedArray
+    private lateinit var movieTitle: Array<String>
+    private lateinit var movieDesc: Array<String>
+    private lateinit var movieDate: Array<String>
+    private lateinit var movieTime: Array<String>
+    private lateinit var movieSeat: Array<String>
     private var movieCatalogs = ArrayList<MovieCatalog>()
-    private var changeFragment: ChangeFragment = ChangeFragment
     private val detailMovieFragment: Fragment = DetailMovieFragment().newInstance()
     private val bundle = Bundle()
 
@@ -87,17 +88,23 @@ class DashboardFragment : Fragment(), DashboardContract.View, View.OnClickListen
     }
 
     private fun prepare() {
-        dataPhoto = resources.obtainTypedArray(R.array.data_photo)
-        dataTitle = resources.getStringArray(R.array.data_title)
-        dataDesc = resources.getStringArray(R.array.data_desc)
+        moviePhoto = resources.obtainTypedArray(R.array.movie_photo)
+        movieTitle = resources.getStringArray(R.array.movie_title)
+        movieDesc = resources.getStringArray(R.array.movie_desc)
+        movieDate = resources.getStringArray(R.array.movie_date)
+        movieTime = resources.getStringArray(R.array.movie_time)
+        movieSeat = resources.getStringArray(R.array.movie_seat)
     }
 
     private fun addItem() {
-        for (position in dataTitle.indices) {
+        for (position in movieTitle.indices) {
             val movieCatalog = MovieCatalog(
-                dataPhoto.getResourceId(position, -1),
-                dataTitle[position],
-                dataDesc[position]
+                moviePhoto.getResourceId(position, -1),
+                movieTitle[position],
+                movieDesc[position],
+                movieDate[position],
+                movieTime[position],
+                movieSeat[position]
             )
             if (!movieCatalogs.contains(movieCatalog))
                 movieCatalogs.add(movieCatalog)
