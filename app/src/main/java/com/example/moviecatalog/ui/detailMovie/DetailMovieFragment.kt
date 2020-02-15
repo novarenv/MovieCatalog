@@ -16,7 +16,7 @@ import com.example.moviecatalog.di.module.FragmentModule
 import com.example.moviecatalog.model.MovieCatalog
 import javax.inject.Inject
 
-class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickListener {
+class DetailMovieFragment: Fragment(), DetailMovieContract.View {
     @Inject
     lateinit var presenter: DetailMovieContract.Presenter
 
@@ -27,8 +27,7 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
     private lateinit var tvMDate: TextView
     private lateinit var tvMTime: TextView
     private lateinit var tvMSeat: TextView
-//    private lateinit var tvMDesc: TextView
-    private lateinit var movieCatalog: MovieCatalog
+    private var movieCatalog: MovieCatalog?= null
 
     fun newInstance(): DetailMovieFragment {
         Log.e("newInstance", "Detail Movie Fragment Instance")
@@ -56,26 +55,16 @@ class DetailMovieFragment: Fragment(), DetailMovieContract.View, View.OnClickLis
         tvMDate = view.findViewById(R.id.tv_m_date)
         tvMTime = view.findViewById(R.id.tv_m_time)
         tvMSeat = view.findViewById(R.id.tv_m_seat)
-//        tvMDesc = view.findViewById(R.id.tv_m_desc)
 
         if (bundle != null) Log.e("Bundle", "Bundle is not null")
 
-        movieCatalog = bundle!!.getParcelable("DetailMovie")!!
+        movieCatalog = bundle?.getParcelable("DetailMovie")
 
-        ivMovie.setImageResource(movieCatalog.photo)
-        tvMTitle.text = movieCatalog.title
-        tvMDate.text = movieCatalog.date
-        tvMTime.text = movieCatalog.time
-        tvMSeat.text = movieCatalog.seat
-//        tvMDesc.text = movieCatalog.desc
-    }
-
-    override fun onClick(v: View?) {
-        Log.e("click", "Click")
-
-        when(v?.id) {
-
-        }
+        ivMovie.setImageResource(movieCatalog?.photo as Int)
+        tvMTitle.text = movieCatalog?.title
+        tvMDate.text = movieCatalog?.date
+        tvMTime.text = movieCatalog?.time
+        tvMSeat.text = movieCatalog?.seat
     }
 
     override fun onAttach(activity: Activity) {

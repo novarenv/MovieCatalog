@@ -9,4 +9,5 @@
     <string name="movie_seat">Movie Seat</string>
     <string name="movie_title">Movie Title</string>
     <string name="movie_description">Movie Description</string>
+    <string name="detail_movie">Detail Movie</string>
 </resources>

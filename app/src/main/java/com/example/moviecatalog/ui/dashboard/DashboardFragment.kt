@@ -19,7 +19,7 @@ import com.example.moviecatalog.model.MovieCatalog
 import com.example.moviecatalog.ui.detailMovie.DetailMovieFragment
 import javax.inject.Inject
 
-class DashboardFragment : Fragment(), DashboardContract.View, View.OnClickListener {
+class DashboardFragment : Fragment(), DashboardContract.View{
     @Inject
     lateinit var presenter: DashboardContract.Presenter
 
@@ -64,21 +64,14 @@ class DashboardFragment : Fragment(), DashboardContract.View, View.OnClickListen
         prepare()
         addItem()
 
-        listView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+        listView.onItemClickListener = AdapterView.OnItemClickListener {
+                _, _, position, _ ->
 
-            bundle.putParcelable("DetailMovie", adapter.movieCatalogs.get(position))
+            bundle.putParcelable("DetailMovie", adapter.movieCatalogs[position])
             detailMovieFragment.arguments = bundle
 
             Toast.makeText(myContext, movieCatalogs[position].title, Toast.LENGTH_SHORT).show()
             presenter.onDetailMovieClick()
-        }
-    }
-
-    override fun onClick(v: View?) {
-        Log.e("error", "Click")
-
-        when(v?.id) {
-
         }
     }
 
@@ -117,7 +110,6 @@ class DashboardFragment : Fragment(), DashboardContract.View, View.OnClickListen
             .addToBackStack(DetailMovieFragment.TAG)
             .replace(R.id.fl_main, detailMovieFragment, DetailMovieFragment.TAG)
             .commit()
-//        changeFragment.showDetailMovieFragment(myContext)
     }
 
     fun injectDashboard() {

@@ -63,7 +63,9 @@
                 android:layout_weight="1"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"
-                app:srcCompat="@drawable/poster_dragonball" />
+                app:srcCompat="@drawable/poster_dragonball"
+                android:contentDescription="@string/detail_movie"
+                />
 
         </LinearLayout>
 

@@ -5,7 +5,7 @@ import com.example.moviecatalog.ui.main.MainActivity
 import dagger.Component
 
 
-@Component(modules = arrayOf(ActivityModule::class))
+@Component(modules = [ActivityModule::class])
 interface ActivityComponent {
     fun inject(mainActivity: MainActivity)
 }
